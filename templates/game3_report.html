@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Analysis Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #3b1464, #2b1055);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .result-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .score {
+            font-size: 50px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #a855f7, #9333ea);
+            padding: 20px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .summary {
+            margin-top: 20px;
+        }
+        .summary div {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+        }
+        .continue-btn {
+            background: #9333ea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .continue-btn:hover {
+            background: #a855f7;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Your Emotion Analysis</h2>
+        <div class="score">76</div>
+        <p>You have a balanced emotional response.</p>
+        <div class="summary">
+            <div><strong>Happiness:</strong> 80% 😊</div>
+            <div><strong>Stress Level:</strong> 40% 😟</div>
+            <div><strong>Optimism:</strong> 60% 🌟</div>
+            <div><strong>Creativity:</strong> 85% 🎨</div>
+        </div>
+        <button class="continue-btn">Continue</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Game1Report(){
+        let dataArray = sessionStorage.getItem('Game1user');
+        let predictions = [];
+    
+        if(dataArray.includes('1. Leave him') && dataArray.includes('2. Leave Others Alone') && dataArray.includes('1. Ask for help')){
+            predictions.push('You are selfish and you do not care about others');
+        }
+        if(dataArray.includes('1. Ask for help') && dataArray.includes('2. Ask question')){
+            predictions.push('You are dependent on others');
+        }
+        
+        if(dataArray.includes('1. Leave him') && dataArray.includes('2. Leave Others Alone') && !dataArray.includes('1. Ask for help')){
+            predictions.push('You are independent and you do not like to ask for help');
+        }
+
+        if(dataArray.includes('4. Destroy the AI to Free Everyone')){
+            predictions.push('You are sensetive towards others and you want to help them, but you have not patience do it in proper way');
+        }
+        return predictions;
+    }
+    function Game2Report(){
+        let data = sessionStorage.getItem('score');
+        let predictions;
+        if(finalScore/500*100 < 45){
+            predictions = 'Your reflexes are very slow, you need to improve more';
+        }
+        else if(finalScore/500*100 < 80){
+            predictions = 'You are not so fast you need to improve little bit';
+        }
+        else if(finalScore/500*100 < 90){
+            predictions = 'You are fast but you need to improve more';
+        }
+        return predictions;        
+    }
+    let resultsArray=[Game1Report(),Game2Report(), sessionStorage.getItem('userColors')];
+</script>
+</html>

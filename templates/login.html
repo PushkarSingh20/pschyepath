@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/projectAlpha_home.css">
+    <style>
+        body {
+            margin: 0px;
+            height: 100vh;
+        }
+        #portraitSpan {
+            background-image: url('/static/Anime-Scenery-Wallpaper-for-Walls.jpg');
+            background-size: cover;
+            position: absolute;
+            left: 50%;
+            width: 50%;
+            height: 100vh;
+        }
+    </style>
+    <audio src="C:\Users\shrey\Desktop\Shreyansh\Technovation\Page Flip Sound Effect.mp3" id="loginSFX"></audio>
+</head>
+<body>
+    <!-- Login Page -->
+    <span id="loginBG">
+        <div id="loginPage">
+            <div class="top-shape">
+                <h2>Log-in</h2>
+            </div>
+        
+            <form id="loginForm">
+                <div class="input-group">
+                    <label style="text-align: left; font-family: 'Consolas';">Email</label>
+                    <input type="email" placeholder="giga@example.com" required id="userID"/>
+                </div>
+        
+                <div class="input-group">
+                    <label style="text-align: left; font-family: 'Consolas';">Password</label>
+                    <input type="password" placeholder="●●●●●●" required id="password"/>
+                </div>
+        
+                <button type="submit" class="login-btn">
+                    Log-in <!--Login button-->
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </form>
+        
+            <div class="bottom-links">
+                <a href="/registeruser">Sign up</a>
+                
+            </div>
+        </div>
+    </span>
+    <div style="width: 50%; height: 100vh; display: inline-block;" id="portraitSpan"></div>
+
+    <script>
+        // Play sound after user interacts with the page
+        window.onload = function() {
+            document.getElementById('loginSFX').play().catch(error => {
+                console.log("Autoplay blocked:", error);
+            });
+        };
+
+        // Handle form submission and send data to local server
+        document.getElementById("loginForm").onsubmit = async function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            // Get input values
+            var ID = document.getElementById('userID').value;
+            var Password = document.getElementById('password').value;
+
+            // Create data object
+            let loginData = {
+                email: ID,
+                password: Password
+            };
+
+            console.log("Sending data:", loginData);
+
+            // Send data to the server using Fetch API
+            try {
+                let response = await fetch("http://127.0.0.1:5000/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(loginData)
+                });
+
+                let result = await response.json(); // Parse JSON response
+                console.log("Server Response:", result);
+
+                // Handle response (modify as per your server's response)
+                if (response.ok) {
+                    alert("Login Successful!");
+                   window.location.href ="http://127.0.0.1:5000/"
+                } else {
+                    alert("Login Failed: " + result.message);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred while logging in.");
+            }
+        };
+
+        // Close button functionality
+        document.getElementById('loginClose').onclick = function() {
+            window.close();
+        };
+    </script>
+</body>
+</html>

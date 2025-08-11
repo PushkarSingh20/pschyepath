@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Result Card UI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #2a0845, #6441a5);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .card {
+            display: flex;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .left {
+            background: linear-gradient(to bottom, #8e2de2, #4a00e0);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .left h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .circle-container {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .score {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        .of-total {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: -5px;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .right {
+            padding: 30px;
+            flex: 1;
+        }
+
+        .summary h4 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 8px 0;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .summary-item span {
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .correct {
+            background: rgba(255, 99, 71, 0.2);
+            color: #ff6347;
+        }
+
+        .wrong {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+        }
+
+        .missed {
+            background: rgba(60, 179, 113, 0.2);
+            color: #3cb371;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background: linear-gradient(135deg, #8e2de2, #4a00e0);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #7a1cc9, #3d0098);
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

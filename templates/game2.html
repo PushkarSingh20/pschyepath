@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game2</title>
+    <link href="/static/game2.css" rel="stylesheet">
+    <audio id="blastSFX" src="static/Bomb blast sound effects(MP3_320K)(2).mp3"></audio>
+</head>
+<body>
+    <img src="/static/orrange_ball.png" alt="correctBall" id="correctBall">
+    <footer>
+        <img src="static/Cannon1.png" alt="cannon1" id="cannon1_1" class="cannon">
+        <img src="static/Cannon2.png" alt="cannon1" id="cannon2_1" class="cannon">
+        <img src="static/Cannon3.png" alt="cannon1" id="cannon3_1" class="cannon">
+        <img src="static/Cannon4.png" alt="cannon1" id="cannon4_1" class="cannon">
+    </footer>
+    <div id="body">
+        <div class="card">
+            <div class="left">
+                <h3>Your Result</h3>
+                <div class="circle-container">
+                    <div>
+                        <div id="scoreId" class="score">76</div>
+                    </div>
+                </div>
+                <div id="messageID" class="message">Great</div>
+                <p id='descriptionID' class="description">You scored higher than 65% of the people who have taken these tests.</p>
+            </div>
+            <div class="right">
+                <div class="summary">
+                    <h4>Summary</h4>
+                    <div class="summary-item correct">
+                        Correct <span id="correct">80 / 100</span>
+                    </div>
+                    <div class="summary-item wrong">
+                        Wrong <span id="wrong">92 / 100</span>
+                    </div>
+                    <div class="summary-item missed">
+                        Missed <span id="missed">61 / 100</span>
+                    </div>
+                    <div class="summary-item">
+                    </div>
+                </div>
+                <a href='/game3' target="_parent" style="text-decoration: none;">
+                    <button class="btn">Continue</button>
+                </a>    
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/game2.js"></script>
+</html>

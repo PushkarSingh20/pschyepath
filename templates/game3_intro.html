@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflex Rush Loading</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background: linear-gradient(to right, #d666ff, #2af459);
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3rem;
+            color: #f832de;/*#6633cc;*/
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .instructions {
+            text-align: left;
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 10px auto;
+            max-width: 600px;
+        }
+
+        .sound-toggle {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .tap-to-play {
+            font-size: 1.5rem;
+            color: #fdfffd;
+            margin-top: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-shadow: 0px 0px 10px rgb(255, 240, 25);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>MoodCanvas</h1>
+    <p class="instructions">1. A scenario appears on the screen.</p>
+    <p class="instructions">2. Choose a color from the palette that best represents your emotion.</p>
+    <p class="instructions">3. Click "Next" to submit your choice.</p>
+    <p class="instructions">4. New scenarios keep appearing, and you repeat the process.</p>
+    <p class="instructions">5. At the end, you receive an analysis based on your color choices.</p>
+    
+    <p class="tap-to-play">&lt;Tap to continue&gt;</p>
+</div>
+
+</body>
+<script>
+    window.onclick=function(){
+        window.open("/playgame3","_self");
+    }
+</script>
+</html>

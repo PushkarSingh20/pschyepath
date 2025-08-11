@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/static/projectAlpha_home.css">
+    <style>
+        body {
+            margin: 0px;
+            height: 100vh;
+        }
+        #portraitSpan {
+            background-image: url('/static/anime-background-asian-style-game-movie-nice-colors-350196553.jpg');
+            background-size: cover;
+            position: absolute;
+            left: 50%;
+            width: 50%;
+            height: 100vh;
+        }
+        .top-shape {
+            position: relative;
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #71f3b8, #e8c66c, #f43ef4);
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+        }
+        #loginBG{
+            background-color: cadetblue;
+        }
+    </style>
+    <audio src="C:\Users\shrey\Desktop\Shreyansh\Technovation\Page Flip Sound Effect.mp3" id="loginSFX"></audio>
+</head>
+<body>
+    <!-- Signup Page -->
+    <span id="loginBG">
+        <div id="loginPage">
+            <div class="top-shape">
+                <h2>Sign-up</h2>
+            </div>
+        
+            <form id="signupForm">
+                <div class="input-group">
+                    <label style="text-align: left; font-family: 'Consolas';">Email</label>
+                    <input type="email" placeholder="giga@example.com" required id="userID"/>
+                </div>
+        
+                <div class="input-group">
+                    <label style="text-align: left; font-family: 'Consolas';">Password</label>
+                    <input type="password" placeholder="●●●●●●" required id="password"/>
+                </div>
+
+                <div class="input-group">
+                    <label style="text-align: left; font-family: 'Consolas';">Confirm Password</label>
+                    <input type="password" placeholder="●●●●●●" required id="confirmPassword"/>
+                </div>
+        
+                <button type="submit" class="login-btn">
+                    Sign-up
+                    <span class="arrow">&rarr;</span>
+                </button>
+            </form>
+        
+            <div class="bottom-links">
+                <a href="projectAlpha_home.html">
+                    <a href="/loginuser">Log in</a>
+                </a>
+            </div>
+        </div>
+    </span>
+    <div style="width: 50%; height: 100vh; display: inline-block;" id="portraitSpan"></div>
+
+    <script>
+        // Play sound after user interacts with the page
+        window.onload = function() {
+            document.getElementById('loginSFX').play().catch(error => {
+                console.log("Autoplay blocked:", error);
+            });
+        };
+
+        // Handle form submission and send data to local server
+        document.getElementById("signupForm").onsubmit = async function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            // Get input values
+            let ID = document.getElementById('userID').value;
+            let Password = document.getElementById('password').value;
+            let ConfirmPassword = document.getElementById('confirmPassword').value;
+
+            // Check if passwords match
+            if (Password !== ConfirmPassword) {
+                alert("Passwords do not match. Please re-enter.");
+                return;
+            }
+
+            // Create data object
+            let signupData = {
+                email: ID,
+                password: Password
+            };
+
+            console.log("Sending data:", signupData);
+
+            // Send data to the server using Fetch API
+            try {
+                let response = await fetch("http://127.0.0.1:5000/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(signupData)
+                });
+
+                let result = await response.json(); // Parse JSON response
+                console.log("Server Response:", result);
+
+                // Handle response based on server reply
+                if (response.ok) {
+                    alert("Signup Successful! Redirecting to login...");
+                    window.location.href = "http://127.0.0.1:5000/loginuser"; // Redirect to login page
+                } else {
+                    alert("Signup Failed: " + (result.message || "Unknown error"));
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred while signing up.");
+            }
+        };
+    </script>
+</body>
+</html>

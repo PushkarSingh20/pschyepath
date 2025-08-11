@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>PsychePath</title>
+    <link rel="stylesheet" href="/static/projectAlpha_home.css">
+    <link rel="stylesheet" href="/static/settingPageHome.css">
+
+    <audio loop id="BGM" autoplay>
+        <source src="/static/Psychepath Home Page BGM.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio src="/static/click2.mp3" id="settingSFX">
+    </audio>
+
+    <audio src="/static/click1.mp3" id="closeSFX"></audio>
+
+    <style>
+        body, html{
+            height: 200vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="background-video" class="intro">
+        <video autoplay muted loop>
+            <source src="/static/homebg.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <header>
+        <table id="logoDesign">
+            <tr>
+                <th style="width: 50px;">
+                    <img src="/static/PsychePath Logo.png" id="logo" alt="logo">
+                </th>
+                <th style="text-align: left; color:rgba(255, 255, 255, 0.347); font-size: small; font-family: 'Consolas';">
+                    Let's Grow
+                </th>
+            </tr>
+        </table>
+        <table id="utilityControl">
+            <tr>
+                <th>
+                    <a id='credit' href="/credit" target="_parent">
+                        CREDITS
+                    </a>    
+                </th>
+                <th id="setting">
+                    SETTINGS
+                </th>
+                <th>
+
+                    {%  if email == None %}
+                    <a id="login" href="/loginuser" target="_parent">
+                        LOG-IN
+                    </a>
+
+                    {% else %}
+                    <a id="login" href="/logout" target="_parent">
+                        LOG-OUT
+                    </a>
+                    {% endif %}
+                </th>
+            </tr>
+        </table>
+
+        
+
+        <!-- Setting Page -->
+        <div id="settingBG">
+            <div class="toggle-container">
+                <!-- Music Toggle -->
+                <div>
+                    <div class="label-container">
+                        <span style="font-family: 'Consolas'; color:dimgrey">Music</span>
+                        <label class="toggle">
+                            <input type="checkbox" id="music-toggle" checked>
+                            <span class="slider" id="music-button">
+                                <div class="wave-container">
+                                    <div class="bar-music"></div>
+                                    <div class="bar-music"></div>
+                                    <div class="bar-music"></div>
+                                </div>
+                            </span>
+                        </label>
+                    </div>
+            
+                    <!-- Sound Toggle -->
+                    <div class="label-container">
+                        <span style="font-family: 'Consolas'; color:dimgrey">Sound</span>
+                        <label class="toggle">
+                            <input type="checkbox" id="sound-toggle" checked>
+                            <span class="slider" id="sound-button">
+                                <div class="sound-wave">
+                                    <div class="wave"></div>
+                                </div>
+                            </span>
+                        </label>
+                    </div>
+        
+                <!-- Close Text -->
+                <span class="close-text" id="close-text-id">Close</span>
+            </div>
+        </div>
+
+
+    </header>
+    <a href="/game1intro" target="_parent">
+        <div id="play"></div>
+    </a>
+    <div id="about" class="section hidden box">
+        <div class="text" id="textID">
+            <div style="width: 40%; background-color: rgba(240, 248, 255, 0.74); border-radius: 10px; padding: 15px;">
+                <p>
+                    Welcome to PSYCHEPATH! The place for you to probe into and understand your psychological behavior. Our website offers an innovative and interactive experience to help assess behaviors such as impulsivity, emotional reaction, or temperaments. As you engage in entertaining games and exercises, we give you information about your inclinations and personalized feedback on how you react to situations.
+                </p>
+                <p>
+                    PSYCHEPATH gives you a hand of self-awareness-whether it is to find out how you react, become better at understanding others, or learn how to manage impulsivity and temper better. Play the already rigorously proven games, set your self-progress, and witness what's happening in your mind in real time.
+                </p>
+                <p>   
+                    To give you more self-understanding on how you react to a particular situation and help you identify characteristics such as impulsive thinkers or overreacting tempers. You will learn a lot about your psychological biases in each game and, thus, time will help you make better decisions and control emotions better.
+                </p>
+                    The journey begins with self-discovery at PSYCHEPATH! Whether you want to know your own mind or become emotionally stronger, the PSYCHEPATH can help you gain guidance along your path. Play today and acquire clearer insight into who you are.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/projectAlpha.js"></script>
+<script src="/static/settingPagehome.js"></script>
+</html>

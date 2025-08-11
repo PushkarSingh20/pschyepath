@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion-Based Color Picker</title>
+    <link href="static/game3.css" rel="stylesheet">
+    <audio src="/static/Game3 ending message.mp3" id="messageDialog"></audio>
+    <audio loop src="static/game3audio.mp3" id='messageBGM'></audio>
+</head>
+<body id='bodyID'>
+
+    <div id="game-container">
+        <h1>Colors of Your Mind 🎨</h1>
+        <p id="scenario-text"></p>
+        <video id="scene-video" controls>
+            <source id="video-source" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="color-options" id="color-options"></div>
+        <button id="next-btn" onclick="nextScenario()">Next</button>
+        <p id="result"></p>
+    </div>
+</body>
+<script src="static/game3.js"></script>
+</html>

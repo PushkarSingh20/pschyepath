@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflex Rush Loading</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background: linear-gradient(to right, #ff66b2, #ffcc66);
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3rem;
+            color: #6633cc;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .instructions {
+            text-align: left;
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 10px auto;
+            max-width: 600px;
+        }
+
+        .sound-toggle {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .sound-toggle span {
+            background: #444;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .tap-to-play {
+            font-size: 1.5rem;
+            color: #0a0b0a;
+            margin-top: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>REFLEX RUSH</h1>
+    <p class="instructions">1. A ball with a random number (1-4) appears at the bottom and moves upward.</p>
+    <p class="instructions">2. Press the correct number key (1, 2, 3, or 4) before the ball disappears.</p>
+    <p class="instructions">3. If you press the correct key, you score a point.</p>
+    <p class="instructions">4. If you press the wrong key, you get a penalty.</p>
+    <p class="instructions">5. If you miss pressing any key, it counts as a missed ball.</p>
+    <p class="instructions">6. The game speeds up as you progress, testing your reflexes and accuracy!</p>
+    
+    <p class="sound-toggle">Press the <span>N</span> key to toggle sound on and off.</p>
+    
+    <p class="tap-to-play">&lt;Tap to continue&gt;</p>
+</div>
+
+</body>
+<script>
+    window.onclick=function(){
+        window.open("/playgame2");
+    }
+</script>
+</html>
